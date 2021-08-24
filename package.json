@@ -1,0 +1,47 @@
+{
+  "name": "pricecalc",
+  "version": "1.0.0",
+  "description": "pricing calculator for shopping cart",
+  "main": "./lib/index.js",
+  "bin": {
+    "pricecalc": "bin/pricecalc"
+  },
+  "scripts": {
+    "start": "ts-node ./src/index.ts", 
+    "test": "npm i mocha && npm i chai && mocha -r ts-node/register src/**/*.ts",
+    "test:unit": "nyc mocha",
+    "lint": "tslint -p . --fix",
+    "build": "npm run  && tsc -p .",
+    "global": "npm i -g && pricecalc",
+    "refresh": "npm run clean:all && npm install",
+    "tscov": "tscov --min-coverage 90",
+    "tscov:d": "tscov --details",
+    "publish-package": "npm run build && npm publish",
+    "docs": "typedoc --out docs ./src"
+  },
+  "author": "sandeep",
+  "license": "ISC",
+  "dependencies": {
+    "@types/fs-extra": "^9.0.12",
+    "chai": "^4.3.4",
+    "clear": "^0.1.0",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.2",
+    "inversify": "^5.1.1",
+    "jsonschema": "^1.4.0",
+    "kleur": "^4.1.4",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@liftr/tscov": "^2.0.0",
+    "@types/chai": "^4.2.21",
+    "@types/figlet": "^1.5.4",
+    "@types/inquirer": "^7.3.3",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.7.1",
+    "ts-node": "^10.2.1",
+    "typedoc": "^0.21.6",
+    "typescript": "^4.3.5"
+  }
+}
